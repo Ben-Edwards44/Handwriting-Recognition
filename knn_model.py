@@ -1,3 +1,6 @@
+#Author: Ben-Edwards44
+
+
 import math
 from PIL import Image
 import numpy
