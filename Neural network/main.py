@@ -20,7 +20,7 @@ def get_data_training():
 def get_test_data():
     print("Fetching test data...")
 
-    with open("mnist_test.csv", "r") as file:
+    with open("mnist_data_test_condensed.csv", "r") as file:
         data = file.read()
 
     print("Fetched test data")
