@@ -1,3 +1,6 @@
+#Author: Ben-Edwards44
+
+
 from math import sqrt
 from random import uniform
 
