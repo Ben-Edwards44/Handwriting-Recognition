@@ -1,3 +1,6 @@
+#Author: Ben-Edwards44
+
+
 import neural_network
 import pickle
 import numpy
@@ -65,8 +68,8 @@ def score():
     print(f"Accuracy: {correct / len(data) * 100}%")
 
 
-def predict_from_image():
-    img_data = list(get_pixel_vals())
+def predict_from_image(fn):
+    img_data = list(get_pixel_vals(fn))
     predicted = list(model.predict(img_data))
 
     certainty = max(predicted)
@@ -75,8 +78,8 @@ def predict_from_image():
     print(f"Predicted {predicted_value} with a certainty of {certainty * 100 :.3f}%")
 
 
-def get_pixel_vals():
-    img_array = imageio.imread("image.png", as_gray=True)
+def get_pixel_vals(fn):
+    img_array = imageio.imread(fn, as_gray=True)
     img_data  = 255.0 - img_array.reshape(784)
     img_data = (img_data / 255.0 * 0.99) + 0.01
 
@@ -100,5 +103,20 @@ def load_model(file_name):
 convert_2d = lambda array: [[i] for i in array]
 
 
-load_model("NeuralnNetwork-250HiddenNodes-0.01Lr-10Epochs.pickle")
+"""
+--------------------------------
+To load a pre-trained model:
+load_model("FILENAME.pickle")
+--------------------------------
+To train a new model:
+model = neural_network.Neural_network(LEARNING RATE, NUMBER OF HIDDEN NODES)
+train(NUMBER OF EPOCHS)
+save_model("FILENAME.pickle")
+--------------------------------
+To test a model's accuracy (the neural network must be stored with the identifier "model"):
 score()
+--------------------------------
+To query a model from an image (the neural network must be stored with the identifier "model"):
+predict_from_image(FILENAME)
+--------------------------------
+"""
