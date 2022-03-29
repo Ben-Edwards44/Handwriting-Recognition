@@ -116,7 +116,7 @@ save_model("FILENAME.pickle")
 To test a model's accuracy (the neural network must be stored with the identifier "model"):
 score()
 --------------------------------
-To query a model from an image (the neural network must be stored with the identifier "model"):
+To query a model from an image (the neural network must be stored with the identifier "model", ensure the image contains a black digit on a white background):
 predict_from_image(FILENAME)
 --------------------------------
 """
