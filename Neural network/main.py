@@ -10,7 +10,7 @@ import imageio
 def get_data_training():
     print("Fetching training data...")
 
-    with open("mnist_train.csv", "r") as file:
+    with open("mnist_data_train_condensed.csv", "r") as file:
         data = file.read()
 
     print("Fetched training data")
